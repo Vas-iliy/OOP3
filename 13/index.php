@@ -5,7 +5,9 @@ use classes\{BookProduct, NotebookProduct};
 
 error_reporting(-1);
 
-function autoloder ($class) {
+require_once __DIR__ . '/vendor/autoload.php';
+
+/*function autoloder ($class) {
     $class = str_replace('\\', '/', $class);
     $file = __DIR__ . "/$class.php";
     if (file_exists($file)) {
@@ -13,7 +15,7 @@ function autoloder ($class) {
     }
 }
 
-spl_autoload_register('autoloder');
+spl_autoload_register('autoloder');*/
 
 function debug ($data) {
     echo "<pre>" . print_r($data, 1) , "</pre>";
@@ -34,4 +36,6 @@ echo $notebook->getProduct();
 $book->setDiscount(20);
 echo $book->getProduct();
 echo $book->getDiscount();
+
+
 
