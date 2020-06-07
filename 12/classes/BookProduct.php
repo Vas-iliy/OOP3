@@ -4,9 +4,11 @@ namespace classes;
 
 use classes\interfaces\I3D;
 
+
 class BookProduct extends Product implements I3D
 {
     public $numPages;
+    static $discount;
     const TEST = 20;
 
     public function __construct($name, $price, $numPages)
@@ -16,11 +18,15 @@ class BookProduct extends Product implements I3D
         self::TEST;
     }
 
+    public static function setDiscount($discount)
+    {
+        self::$discount = $discount;
+    }
+
     public function getProduct()
     {
         $out = parent::getProduct();
-        $out .= "Кол-во страниц: {$this->numPages}<br>
-                   Цена: {$this->price}<br>";
+        $out .= "Кол-во страниц: {$this->numPages}<br>";
 
         return $out;
     }

@@ -30,6 +30,6 @@ class NotebookProduct extends Product implements IGadget
 
     protected function addProduct($name, $text)
     {
-        // TODO: Implement addProduct() method.
+
     }
 }

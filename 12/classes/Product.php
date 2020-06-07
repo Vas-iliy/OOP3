@@ -31,5 +31,4 @@ abstract class Product
 
     abstract protected function addProduct ($name, $text);
 
-
 }
