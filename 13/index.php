@@ -1,7 +1,7 @@
 <?php
 
-use classes\interfaces\IGadget;
-use classes\{BookProduct, NotebookProduct};
+use wfm\interfaces\IGadget;
+use app\{BookProduct, NotebookProduct};
 
 error_reporting(-1);
 
@@ -36,6 +36,9 @@ echo $notebook->getProduct();
 $book->setDiscount(20);
 echo $book->getProduct();
 echo $book->getDiscount();
+
+$mail = new \PHPMailer\PHPMailer\PHPMailer();
+debug($mail);
 
 
 

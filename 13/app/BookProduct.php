@@ -1,9 +1,9 @@
 <?php
 
-namespace classes;
+namespace app;
 
-use classes\interfaces\I3D;
-
+use wfm\interfaces\I3D;
+use wfm\Product;
 
 class BookProduct extends Product implements I3D
 {

@@ -1,8 +1,11 @@
 {
-  "require": {},
+  "require": {
+    "phpmailer/phpmailer": "^6.1"
+  },
   "autoload": {
     "psr-4": {
-      "classes\\": "classes"
+      "wfm\\": "vendor/wfm",
+      "app\\": "app"
     }
   }
 }
