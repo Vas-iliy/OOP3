@@ -34,6 +34,7 @@ offCase($notebook);
 
 echo $notebook->getProduct();
 
+$book->setDiscount(20);
 echo $book->getProduct();
-echo BookProduct::TEST;
+echo $book->getDiscount();
 

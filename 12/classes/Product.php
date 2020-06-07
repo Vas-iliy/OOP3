@@ -18,8 +18,7 @@ abstract class Product
     public function getProduct ()
     {
         $out = "<hr><b>О товаре:</b><br>
-                Наименование: {$this->name}<br>
-                Цена: {$this->price}<br>";
+                Наименование: {$this->name}<br>";
 
         return $out;
     }

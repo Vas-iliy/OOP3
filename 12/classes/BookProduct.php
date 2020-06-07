@@ -7,8 +7,8 @@ use classes\interfaces\I3D;
 
 class BookProduct extends Product implements I3D
 {
-    public $numPages;
-    static $discount;
+    private $numPages;
+    private $discount;
     const TEST = 20;
 
     public function __construct($name, $price, $numPages)
@@ -18,15 +18,15 @@ class BookProduct extends Product implements I3D
         self::TEST;
     }
 
-    public static function setDiscount($discount)
-    {
-        self::$discount = $discount;
-    }
 
     public function getProduct()
     {
         $out = parent::getProduct();
         $out .= "Кол-во страниц: {$this->numPages}<br>";
+        if ($this->discount) {
+            $this->price = $this->price-$this->price/100*$this->discount;
+            $out .= "Цена со скидкой: {$this->price}<br>";
+        }
 
         return $out;
     }
@@ -44,5 +44,18 @@ class BookProduct extends Product implements I3D
 
     public function test()
     {
+    }
+
+
+    public function getDiscount()
+    {
+
+        return 'Скидка: '.$this->discount;
+    }
+
+
+    public function setDiscount($discount)
+    {
+        $this->discount = $discount;
     }
 }

@@ -17,7 +17,8 @@ class NotebookProduct extends Product implements IGadget
     public function getProduct()
     {
         $out = parent::getProduct();
-        $out .= "Процессор: {$this->cpu}<br>";
+        $out .= "Процессор: {$this->cpu}<br>
+                 Цена: {$this->price}<br>";
 
         return $out;
     }
