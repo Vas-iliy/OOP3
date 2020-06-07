@@ -2,7 +2,9 @@
 
 namespace classes;
 
-class BookProduct extends Product
+use classes\interfaces\I3D;
+
+class BookProduct extends Product implements I3D
 {
     public $numPages;
     const TEST = 20;
@@ -11,14 +13,14 @@ class BookProduct extends Product
     {
         parent::__construct($name, $price);
         $this->numPages = $numPages;
-        var_dump(self::class);
+        self::TEST;
     }
 
     public function getProduct()
     {
         $out = parent::getProduct();
         $out .= "Кол-во страниц: {$this->numPages}<br>
-                   Цена без скидки: {$this->price}<br>";
+                   Цена: {$this->price}<br>";
 
         return $out;
     }
@@ -34,4 +36,7 @@ class BookProduct extends Product
         var_dump($text);
     }
 
+    public function test()
+    {
+    }
 }
