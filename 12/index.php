@@ -12,22 +12,23 @@ require_once 'classes/I3D.php';
 require_once 'classes/BookProduct.php';
 require_once 'classes/NotebookProduct.php';*/
 
-function autoloder1 ($class) {
-    $file = __DIR__ . "/$class.php";
+function autoloder ($class) {
+    echo $file = __DIR__ . "/$class.php";
+    exit();
     if (file_exists($file)) {
         require_once $file;
     }
 }
 
-function autoloder2 ($class) {
+/*function autoloder2 ($class) {
     $file = __DIR__ . "/$class.php";
     if (file_exists($file)) {
         require_once $file;
     }
-}
+}*/
 
-spl_autoload_register('autoloder1');
-spl_autoload_register('autoloder2');
+spl_autoload_register('autoloder');
+
 
 
 function debug ($data) {
@@ -45,4 +46,5 @@ $notebook = new NotebookProduct('Del', 54000, 'AMD');
 offCase($notebook);
 
 echo $book->getProduct();
+echo BookProduct::TEST;
 
