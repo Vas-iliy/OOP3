@@ -1,8 +1,7 @@
 <?php
 
-use classes\BookProduct;
 use classes\interfaces\IGadget;
-use classes\NotebookProduct;
+use classes\{BookProduct, NotebookProduct};
 
 error_reporting(-1);
 
@@ -15,8 +14,6 @@ function autoloder ($class) {
 }
 
 spl_autoload_register('autoloder');
-
-
 
 function debug ($data) {
     echo "<pre>" . print_r($data, 1) , "</pre>";
