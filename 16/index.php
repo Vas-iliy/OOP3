@@ -19,16 +19,7 @@ $book = new BookProduct('Три пидораса', 1000, 500);
 $notebook = new NotebookProduct('Del', 54000, 'AMD');
 
 
-offCase($notebook);
-
-echo $notebook->getProduct();
-
-$book->setDiscount(20);
-echo $book->getProduct();
-echo $book->getDiscount();
-
-$mail = new \PHPMailer\PHPMailer\PHPMailer();
-debug($mail);
+echo $book;
 
 
 

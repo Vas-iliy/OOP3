@@ -18,6 +18,24 @@ class BookProduct extends Product implements I3D
         self::TEST;
     }
 
+    public function __get($name)
+    {
+        // TODO: Implement __get() method.
+        var_dump($name);
+    }
+
+    public function __set($name, $value)
+    {
+        // TODO: Implement __set() method.
+        var_dump($name);
+        var_dump($value);
+    }
+
+    public function __toString()
+    {
+        return $this->getProduct();
+    }
+
 
     public function getProduct()
     {
@@ -58,4 +76,5 @@ class BookProduct extends Product implements I3D
     {
         $this->discount = $discount;
     }
+
 }
